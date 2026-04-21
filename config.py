@@ -2,8 +2,6 @@ import os
 
 class Config:
     TASKS_FILE = "pending_tasks.json"
-    NOTION_API_KEY = os.getenv("NOTION_API_KEY")
-    NOTION_DATABASE_ID = os.getenv("NOTION_DATABASE_ID")
 
     SUBJECT_OPTIONS = [
         "Personal",
@@ -21,3 +19,11 @@ class Config:
         "In progress",
         "Done",
     ]
+
+    @staticmethod
+    def get_notion_api_key():
+        return os.getenv("NOTION_API_KEY")
+
+    @staticmethod
+    def get_notion_database_id():
+        return os.getenv("NOTION_DATABASE_ID")

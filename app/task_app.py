@@ -13,8 +13,8 @@ class TaskApp:
     def __init__(self):
         self.storage = TaskStorage(Config.TASKS_FILE)
         self.notion_service = NotionService(
-            Config.NOTION_API_KEY,
-            Config.NOTION_DATABASE_ID
+            Config.get_notion_api_key(),
+            Config.get_notion_database_id()
         )
 
     def clear_screen(self) -> None:
